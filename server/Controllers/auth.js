@@ -63,6 +63,14 @@ exports.login = async (req, res) => {
       jwt.sign(payload, "jwtsecret", { expiresIn: "1d" }, (err, token) => {
         if (err) throw err;
         res.json({ token, payload });
+        //
+         // res.status(200).send({
+         //                // token: "Bearer "+token,
+         //                token: token,
+         //                // user: user & payload
+         //                user: payload
+         //            })
+        //
       });
     } else {
       const text = "User " + name + " พยายาม Login ที่ Ipaddress :" + ip;
